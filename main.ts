@@ -7,8 +7,11 @@ input.onButtonPressed(Button.B, function () {
 let Start = 0
 Start = 0
 basic.forever(function () {
-    basic.showNumber(led.brightness())
-    if (Start && led.brightness() > 34) {
+    led.plotBarGraph(
+    input.lightLevel(),
+    255
+    )
+    if (Start && input.lightLevel() > 5) {
         music.playMelody("D E D E C5 B - G ", 170)
     }
 })
